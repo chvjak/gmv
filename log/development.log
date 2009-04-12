@@ -1824,3 +1824,1425 @@ Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:49:32) [GET]
 Rendering template within layouts/events
 Rendering events/index
 Completed in 22ms (View: 5, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:52:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering events/show
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:20:30) [GET]
+
+ActionController::RoutingError (No route matches "/FlickerViewer.swf" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:20:35) [GET]
+
+ActionController::RoutingError (No route matches "/FlickrViewer.swf" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 22:20:59) [GET]
+  [4;36;1mEvent Load (0.8ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/events/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:21:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:21:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:21:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:21:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:21:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:21:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:21:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20090412171646)
+Migrating to AddLocationToEvent (20090412181037)
+Migrating to AddThumbnailToEvent (20090412192203)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mALTER TABLE "events" ADD "thumbnail" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090412192203')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("events")[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 22:23:17) [GET]
+  [4;36;1mEvent Load (1.9ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 72ms (View: 25, DB: 2) | 200 OK [http://localhost/events/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:23:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:23:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 22:23:32) [GET]
+  [4;35;1mEvent Load (0.9ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 77ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2009-04-12 22:23:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/edit
+
+ActionView::TemplateError (uninitialized constant Event::User) on line #8 of app/views/events/edit.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :user %><br />
+8:     <%= f.text_field :user %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :title %><br />
+
+    app/views/events/edit.html.erb:8
+    app/views/events/edit.html.erb:3
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (121.6ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2009-04-12 22:23:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/events/2/edit]
+
+
+Processing EventsController#update (for 127.0.0.1 at 2009-04-12 22:23:47) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"C/6r02Z580flsOv2LJC8Bn6J+3XZmo4W4K1fdvxLPE4=", "event"=>{"event_at(1i)"=>"2009", "thumbnail"=>"1.jpg", "event_at(2i)"=>"4", "title"=>"Хмм", "event_at(3i)"=>"12", "published_at(1i)"=>"2009", "description"=>"", "published_at(2i)"=>"4", "published_at(3i)"=>"12"}, "id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+  [4;35;1mEvent Update (0.8ms)[0m   [0mUPDATE "events" SET "thumbnail" = '1.jpg', "updated_at" = '2009-04-12 19:23:47' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/events/2
+Completed in 55ms (DB: 1) | 302 Found [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:23:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined local variable or method `event' for #<ActionView::Base:0x1356de8>) on line #5 of app/views/events/show.html.erb:
+2: 	<param name="movie" value="/viewer.swf" />
+3: 	<param name="allowfullscreen" value="true" />
+4: 	<param name="allowscriptaccess" value="always" />
+5: 	<param name="flashvars" value='eventId=<%= event.id %>' />
+6: </object>
+
+    app/views/events/show.html.erb:5
+    app/controllers/events_controller.rb:29:in `show'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (59.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:32:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:32:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 22:33:33) [GET]
+  [4;35;1mEvent Load (0.8ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 18ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2009-04-12 22:33:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/events/2/edit]
+
+
+Processing EventsController#update (for 127.0.0.1 at 2009-04-12 22:33:58) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"C/6r02Z580flsOv2LJC8Bn6J+3XZmo4W4K1fdvxLPE4=", "event"=>{"event_at(1i)"=>"2009", "thumbnail"=>"1.png", "event_at(2i)"=>"4", "title"=>"Хмм", "event_at(3i)"=>"12", "published_at(1i)"=>"2009", "description"=>"", "published_at(2i)"=>"4", "published_at(3i)"=>"12"}, "id"=>"2"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+  [4;36;1mEvent Update (0.6ms)[0m   [0;1mUPDATE "events" SET "thumbnail" = '1.png', "updated_at" = '2009-04-12 19:33:58' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/events/2
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:33:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:33:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:33:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:33:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:34:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:34:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 87ms (View: 79, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:34:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:35:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 135ms (View: 125, DB: 0) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:36:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:36:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:36:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:36:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:36:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:36:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:36:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:37:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:37:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:38:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 18ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:38:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:39:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.8ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:39:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 13ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:40:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:40:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:40:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:40:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:40:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:40:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:40:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:40:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:41:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (1.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:41:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 25ms (View: 12, DB: 0) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:42:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (1.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:42:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 27ms (View: 17, DB: 0) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:42:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:42:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:43:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:43:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 34ms (View: 16, DB: 0) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:44:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:44:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 113ms (View: 13, DB: 1) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:46:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:46:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:48:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:48:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:48:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:49:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 27ms (View: 13, DB: 0) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:49:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:49:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:50:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:52:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2009-04-12 22:52:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:53:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:53:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:53:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:54:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (1.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-12 22:57:00) [GET]
+
+ActionController::RoutingError (No route matches "/2" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:57:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 16ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:57:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 22:57:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 23:02:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 3, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 23:19:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 23:20:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 156ms (View: 2, DB: 1) | 200 OK [http://localhost/events/2]

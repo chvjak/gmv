@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Box xmlns:mx="http://www.adobe.com/2006/mxml" updateComplete="init()">
+	<mx:Script>
+		<![CDATA[
+			import mx.core.Application;
+			
+			public function init():void{
+				pic.source = '/images/' + data.thumbnail;
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Image id="pic" width="100" height="100" />
+</mx:Box>

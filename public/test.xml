@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<catalog>
+    <product id="1">
+        <name>USB Watch</name>
+        <price>129.99</price>
+        <image>assets/products/usbwatch.jpg</image>
+        <thumbnail>assets/products/usbwatch_sm.jpg</thumbnail>
+    </product>
+    <product id="2">
+        <name>007 Digital Camera</name>
+        <price>99.99</price>
+        <image>assets/products/007camera.jpg</image>
+        <thumbnail>assets/products/007camera_sm.jpg</thumbnail>
+    </product>
+    <product id="3">
+        <name>2-Way Radio Watch</name>
+        <price>49.99</price>
+        <image>assets/products/radiowatch.jpg</image>
+        <thumbnail>assets/products/radiowatch_sm.jpg</thumbnail>
+    </product>
+    <product id="4">
+        <name>USB Desk Fan</name>
+        <price>19.99</price>
+        <image>assets/products/usbfan.jpg</image>
+        <thumbnail>assets/products/usbfan_sm.jpg</thumbnail>
+    </product>
+    <product id="5">
+        <name>Caffeinated Soap</name>
+        <price>19.99</price>
+        <image>assets/products/soap.jpg</image>
+        <thumbnail>assets/products/soap_sm.jpg</thumbnail>
+    </product>
+    <product id="6">
+        <name>Desktop Rovers</name>
+        <price>49.99</price>
+        <image>assets/products/rover.jpg</image>
+        <thumbnail>assets/products/rover_sm.jpg</thumbnail>
+    </product>
+</catalog>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090412181037) do
+ActiveRecord::Schema.define(:version => 20090412192203) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20090412181037) do
     t.string   "location"
     t.float    "lat"
     t.float    "lon"
+    t.string   "thumbnail"
   end
 
 end

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns="*" xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:controls="qs.controls.*" xmlns:smooth="imageControls.*" 
+	xmlns:eff="com.adobe.effects.*" xmlns:views="views.*"
+	layout="vertical" 
+	height="100%" width="100%"
+	title="CLICK ANYWHERE TO CLOSE" textAlign="center" color="#333333" 
+	backgroundColor="#000000" backgroundAlpha="0.9"
+	borderThicknessLeft="0" borderThicknessRight="0" borderThicknessTop="0" borderThicknessBottom="0"
+	headerHeight="25" verticalScrollPolicy="off" horizontalScrollPolicy="off" 
+	paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0" 
+	creationComplete="init()">
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.core.Application;
+			import mx.rpc.soap.LoadEvent;
+			import mx.managers.SystemManager;
+			import mx.managers.PopUpManager;
+	        import mx.utils.ArrayUtil;
+	        import mx.collections.ArrayCollection;
+			
+			import com.adobe.webapis.flickr.methodgroups.People;
+			import com.adobe.webapis.flickr.methodgroups.PhotoSets;
+			import com.adobe.webapis.flickr.FlickrService;
+	        import com.adobe.webapis.flickr.*;
+	        import com.adobe.webapis.flickr.events.*;
+			
+			[Bindable] private var photos:ArrayCollection;
+			[Bindable] private var photoUrl:String;
+			[Bindable] private var photoFlickrUrl:String;
+			[Bindable] public var selectedPhotoNum:Number;
+			[Bindable] public var selectedPhoto:String;
+			
+			public function init():void
+			{
+				img.visible = false;
+				this.width = stage.width;
+				this.height = stage.height;
+				getPhotoSize();
+			}
+			
+            private function removeMe():void {
+                PopUpManager.removePopUp(this);
+            }
+            
+            private function getPhotoSize():void{ 
+				trace("getPhotoSize: "+selectedPhoto)
+            	preload.visible = true
+				img.visible = false;
+			    var service:FlickrService = new FlickrService( Application.application.api_key );
+			   	service.addEventListener( FlickrResultEvent.PHOTOS_GET_SIZES, onPhotoSizeSearch );
+			   	service.photos.getSizes( Application.application.photos[selectedPhotoNum].id );
+			}
+			
+			private function onPhotoSizeSearch( event:FlickrResultEvent ):void {
+			    var photoSize:PhotoSize = event.data["photoSizes"] as PhotoSize;
+			    imgTitle.text = Application.application.photos[selectedPhotoNum].title
+			    var result:Array = event.data.photoSize;
+				photoUrl = event.data["photoSizes"][(event.data["photoSizes"].length-1)].source;
+			} 
+			
+			public function changePic(operation:String):void{
+				if(operation == "next"){
+					if(selectedPhotoNum < Application.application.photos.length-1){
+						selectedPhotoNum++; 
+					}else{
+						selectedPhotoNum = 0; 
+					}
+				}else{
+					if(selectedPhotoNum > 0){
+						selectedPhotoNum--; 
+					}else{
+						selectedPhotoNum = Application.application.photos.length-1; 
+					}
+				}
+				getPhotoSize();
+			}
+			
+			
+		]]>
+	</mx:Script>
+    <mx:Sequence id="fadeAndBlurIn" startDelay="0" > 
+		<mx:Fade id="fadeIn" duration="1200" alphaFrom="0.0" alphaTo="1.0" />
+	</mx:Sequence>
+    <mx:Sequence id="fadeAndBlurOut" startDelay="0">
+	    <mx:Fade id="fadeOut" duration="300" alphaFrom="1.0" alphaTo="0" />
+    </mx:Sequence>
+    
+    <mx:Canvas height="100%" width="100%">
+	    <mx:Canvas x="0" y="0" id="preload" width="100%" height="100%" click="removeMe()" >		
+				<mx:Box width="100%" height="100%" verticalAlign="middle">
+					<mx:ProgressBar id="preloadBar" source="daPic" mode="event" width="100%"
+						complete="preload.visible = false; img.visible = true;" labelPlacement="bottom"/>
+						<mx:Label id="imgTitle" width="100%" textAlign="center" 
+							text="{Application.application.photos.getItemAt(Application.application.selectedPhotoNum).title}" 
+							fontSize="25" color="#666666" />
+					<mx:Image id="daPic2" source="{photoUrl}" visible="false" width="1" height="1" />
+				</mx:Box>
+		</mx:Canvas>
+		<mx:Canvas x="0" y="0" width="100%" height="100%" id="img" 
+			showEffect="{fadeAndBlurIn}" hideEffect="{fadeAndBlurOut}"
+			verticalScrollPolicy="off" horizontalScrollPolicy="off">
+			<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+				<mx:Box id="prevBox" visible="true" width="100" height="100%" horizontalAlign="center">
+					<mx:Spacer height="50%" />
+					<mx:Button width="70" label="prev" click="changePic('prev')" />
+				</mx:Box>
+				<mx:Box width="100%" height="100%" 
+					verticalAlign="middle" horizontalAlign="center" click="removeMe()">
+					<mx:Image id="daPic" source="{photoUrl}"
+						verticalAlign="center" horizontalAlign="middle"
+						width="100%" height="100%" cacheAsBitmap="true"  />
+				</mx:Box>
+				<mx:Box id="nextBox" width="100" height="100%" bottom="10%" horizontalAlign="center">
+					<mx:Spacer height="50%" />
+					<mx:Button width="70" label="next" click="changePic('next')" />
+				</mx:Box>
+			</mx:HBox>
+		</mx:Canvas>
+	</mx:Canvas>
+</mx:TitleWindow>
