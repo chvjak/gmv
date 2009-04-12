@@ -6,3 +6,1821 @@ Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-04-12 19:41:4
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
 Completed in 128ms (View: 15, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+WARNING: geokit-rails requires the Geokit gem. You either don't have the gem installed,
+or you haven't told Rails to require it. If you're using a recent version of Rails: 
+  config.gem "geokit" # in config/environment.rb
+and of course install the gem: sudo gem install geokit
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20090412171646)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "description" text, "published_at" date, "event_at" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090412171646')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("events")[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:18:36) [GET]
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 46ms (View: 23, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 20:18:39) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 522ms (View: 516, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 20:23:56) [GET]
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `events_path' for #<ActionView::Base:0x2515e44>) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for(@event) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (48.7ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:24:34) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (undefined local variable or method `new_event_path' for #<ActionView::Base:0x238dc5c>) on line #28 of app/views/events/index.html.erb:
+25: 
+26: <br />
+27: 
+28: <%= link_to 'New event', new_event_path %>
+
+    app/views/events/index.html.erb:28
+    app/controllers/events_controller.rb:7:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (44.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:25:12) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:26:10) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 74ms (View: 69, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:26:16) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:29:08) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:29:10) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:29:45) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (undefined local variable or method `new_event_path' for #<ActionView::Base:0x24726cc>) on line #28 of app/views/events/index.html.erb:
+25: 
+26: <br />
+27: 
+28: <%= link_to 'New event', new_event_path %>
+
+    app/views/events/index.html.erb:28
+    app/controllers/events_controller.rb:7:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (107.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:30:02) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (upaychka_event_url failed to generate from {:controller=>"events", :action=>"index"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["event", "new", :upya] - are they all satisfied?) on line #28 of app/views/events/index.html.erb:
+25: 
+26: <br />
+27: 
+28: <%= link_to 'New event', upaychka_event_path %>
+
+    (eval):20:in `upaychka_event_path'
+    app/views/events/index.html.erb:28
+    app/controllers/events_controller.rb:7:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (118.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:30:03) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (upaychka_event_url failed to generate from {:controller=>"events", :action=>"index"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["event", "new", :upya] - are they all satisfied?) on line #28 of app/views/events/index.html.erb:
+25: 
+26: <br />
+27: 
+28: <%= link_to 'New event', upaychka_event_path %>
+
+    (eval):20:in `upaychka_event_path'
+    app/views/events/index.html.erb:28
+    app/controllers/events_controller.rb:7:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (49.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+/!\ FAILSAFE /!\  Sun Apr 12 20:30:16 +0300 2009
+  Status: 500 Internal Server Error
+  /Users/dru/git/gmv/config/routes.rb:47: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+  map.connect ':controller/:action/:id'
+               ^
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:266:in `load!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:281:in `reload'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:102:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:28:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:54:in `serve_rails'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:74:in `call'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:63:in `pre_process'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:54:in `process'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:39:in `receive_data'
+    /Library/Ruby/Gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run_machine'
+    /Library/Ruby/Gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/backends/base.rb:57:in `start'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/server.rb:150:in `start'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/controllers/controller.rb:80:in `start'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `send'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `run_command'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:139:in `run!'
+    /Library/Ruby/Gems/1.8/gems/thin-1.0.0/bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:30:21) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 75ms (View: 1, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:30:29) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (upaychka_event_url failed to generate from {:controller=>"events", :action=>"index"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["event", "new", :upya] - are they all satisfied?) on line #28 of app/views/events/index.html.erb:
+25: 
+26: <br />
+27: 
+28: <%= link_to 'New event', upaychka_event_path %>
+
+    (eval):20:in `upaychka_event_path'
+    app/views/events/index.html.erb:28
+    app/controllers/events_controller.rb:7:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (47.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:30:42) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:31:07) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:33:36) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:33:37) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:33:39) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:35:34) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:35:39) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:36:07) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:36:09) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 7ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:36:28) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:37:17) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:37:19) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:38:13) [GET]
+  [4;36;1mEvent Load (56.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 68ms (View: 6, DB: 56) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:38:40) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:39:20) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:40:09) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:40:35) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:41:19) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:41:34) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:42:21) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:42:34) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:43:03) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:44:39) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:45:01) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:45:13) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:45:19) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 68ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 20:45:26) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 10.0.2.5 at 2009-04-12 21:03:51) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+ERROR: compiling _run_erb_app47views47layouts47events46html46erb RAISED compile error
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:41: syntax error, unexpected '>'
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:42: syntax error, unexpected ')', expecting kEND
+			createMarker(<%=  ; @output_buffer.concat ", "; @output_buffer.concat(( render :partial=> "popup" ).to_s); @output_buffer.concat ")\n"
+			                                                                                                   ^
+Function body:           def _run_erb_app47views47layouts47events46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
+@output_buffer.concat "       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
+@output_buffer.concat "<head>\n"
+@output_buffer.concat "  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n"
+@output_buffer.concat "  <title>Events: "; @output_buffer.concat(( controller.action_name ).to_s); @output_buffer.concat "</title>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( stylesheet_link_tag 'scaffold' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( javascript_include_tag "swfobject" ).to_s); @output_buffer.concat "\t\n"
+@output_buffer.concat "\t<script src=\"http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA\"\n"
+@output_buffer.concat "\t        type=\"text/javascript\"></script>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\t<script type=\"text/javascript\">\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "\tfunction initialize() {\n"
+@output_buffer.concat "\t  if (GBrowserIsCompatible()) {\n"
+@output_buffer.concat "\t    var map = new GMap2(document.getElementById(\"map_canvas\"));\n"
+@output_buffer.concat "\t    map.setCenter(new GLatLng(37.4419, -122.1419), 13);\n"
+@output_buffer.concat "\t\tsetupMarkers(map);\n"
+@output_buffer.concat "\t  }\n"
+@output_buffer.concat "\t  \n"
+@output_buffer.concat "\t}\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\tfunction createMarker(point, html) {\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "      letteredIcon.image = \"http://www.google.com/mapfiles/markerA.png\";\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "      markerOptions = { icon:letteredIcon };\n"
+@output_buffer.concat "      var marker = new GMarker(point, markerOptions);\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "      GEvent.addListener(marker, \"click\", function() {\n"
+@output_buffer.concat "        marker.openInfoWindowHtml(html);\n"
+@output_buffer.concat "      });\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "      return marker;\n"
+@output_buffer.concat "    }\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\tfunction setupMarkers(map)\n"
+@output_buffer.concat "\t{\n"
+@output_buffer.concat "\t\t";  @events.each do |event|>
+			createMarker(<%=  ; @output_buffer.concat ", "; @output_buffer.concat(( render :partial=> "popup" ).to_s); @output_buffer.concat ")\n"
+@output_buffer.concat "\t\t";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "\t}\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\t</script>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</head>\n"
+@output_buffer.concat "<body onload=\"initialize();\">\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p style=\"color: green\">"; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dru/git/gmv/app/views/layouts/events.html.erb:61:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:347:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/dru/git/gmv/app/controllers/events_controller.rb:7:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:102:in `dispatch_cgi'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:28:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:74:in `call'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:63:in `pre_process'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:54:in `process'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:39:in `receive_data'
+/Library/Ruby/Gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run_machine'
+/Library/Ruby/Gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/backends/base.rb:57:in `start'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/server.rb:150:in `start'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/controllers/controller.rb:80:in `start'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `send'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `run_command'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:139:in `run!'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/bin/thin:6
+/usr/bin/thin:19:in `load'
+/usr/bin/thin:19
+
+ActionView::TemplateError (compile error
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:41: syntax error, unexpected '>'
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:42: syntax error, unexpected ')', expecting kEND
+			createMarker(<%=  ; @output_buffer.concat ", "; @output_buffer.concat(( render :partial=> "popup" ).to_s); @output_buffer.concat ")\n"
+			                                                                                                   ^) on line #41 of app/views/layouts/events.html.erb:
+38: 	
+39: 	function setupMarkers(map)
+40: 	{
+41: 		<% @events.each do |event|>
+42: 			createMarker(<%=  %>, <%= render :partial=> "popup" %>)
+43: 		<% end %>
+44: 	}
+
+    app/views/layouts/events.html.erb:61:in `compile!'
+    app/controllers/events_controller.rb:7:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (105.4ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+Google geocoding. Address: 100 Spear st, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Spear st, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Spear St, San Francisco, CA 94105, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Spear St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94105</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7952976" south="37.7890024" east="-122.3908524" west="-122.3971476" />
+    </ExtendedData>
+    <Point><coordinates>-122.3940000,37.7921500,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+
+
+Processing EventsController#index (for 10.0.2.5 at 2009-04-12 21:08:36) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+ERROR: compiling _run_erb_app47views47layouts47events46html46erb RAISED compile error
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:42: syntax error, unexpected '>'
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:43: syntax error, unexpected '=', expecting kEND
+			<% res = MultiGeocoder.geocode('100 Spear st, San Francisco, CA') ; @output_buffer.concat "\n"
+			        ^
+Function body:           def _run_erb_app47views47layouts47events46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
+@output_buffer.concat "       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
+@output_buffer.concat "<head>\n"
+@output_buffer.concat "  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n"
+@output_buffer.concat "  <title>Events: "; @output_buffer.concat(( controller.action_name ).to_s); @output_buffer.concat "</title>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( stylesheet_link_tag 'scaffold' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( javascript_include_tag "swfobject" ).to_s); @output_buffer.concat "\t\n"
+@output_buffer.concat "\t<script src=\"http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA\"\n"
+@output_buffer.concat "\t        type=\"text/javascript\"></script>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\t<script type=\"text/javascript\">\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "\tfunction initialize() {\n"
+@output_buffer.concat "\t  if (GBrowserIsCompatible()) {\n"
+@output_buffer.concat "\t    var map = new GMap2(document.getElementById(\"map_canvas\"));\n"
+@output_buffer.concat "\t    map.setCenter(new GLatLng(37.4419, -122.1419), 13);\n"
+@output_buffer.concat "\t\tsetupMarkers(map);\n"
+@output_buffer.concat "\t  }\n"
+@output_buffer.concat "\t  \n"
+@output_buffer.concat "\t}\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\tfunction createMarker(point, html) {\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "      letteredIcon.image = \"http://www.google.com/mapfiles/markerA.png\";\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "      markerOptions = { icon:letteredIcon };\n"
+@output_buffer.concat "      var marker = new GMarker(point, markerOptions);\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "      GEvent.addListener(marker, \"click\", function() {\n"
+@output_buffer.concat "        marker.openInfoWindowHtml(html);\n"
+@output_buffer.concat "      });\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "      return marker;\n"
+@output_buffer.concat "    }\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\tfunction setupMarkers(map)\n"
+@output_buffer.concat "\t{\n"
+@output_buffer.concat "\t\t";  res = nil ; @output_buffer.concat "\n"
+@output_buffer.concat "\t\t";  @events.each do |event|>
+			<% res = MultiGeocoder.geocode('100 Spear st, San Francisco, CA') ; @output_buffer.concat "\n"
+@output_buffer.concat "\t\t\t\n"
+@output_buffer.concat "\t\t\tcreateMarker(new GLatLng("; @output_buffer.concat(( res.lat ).to_s); @output_buffer.concat ", "; @output_buffer.concat(( res.lng ).to_s); @output_buffer.concat ") , "; @output_buffer.concat(( render :partial=> "popup" ).to_s); @output_buffer.concat ")\n"
+@output_buffer.concat "\t\t";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "\t\tmap.setCenter((new GLatLng("; @output_buffer.concat(( res.lat ).to_s); @output_buffer.concat ", "; @output_buffer.concat(( res.lng ).to_s); @output_buffer.concat "), 13;\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "\t}\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\t</script>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</head>\n"
+@output_buffer.concat "<body onload=\"initialize();\">\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p style=\"color: green\">"; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/dru/git/gmv/app/views/layouts/events.html.erb:66:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:347:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/dru/git/gmv/app/controllers/events_controller.rb:10:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:102:in `dispatch_cgi'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:28:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:74:in `call'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:63:in `pre_process'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:54:in `process'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:39:in `receive_data'
+/Library/Ruby/Gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run_machine'
+/Library/Ruby/Gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/backends/base.rb:57:in `start'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/server.rb:150:in `start'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/controllers/controller.rb:80:in `start'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `send'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `run_command'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:139:in `run!'
+/Library/Ruby/Gems/1.8/gems/thin-1.0.0/bin/thin:6
+/usr/bin/thin:19:in `load'
+/usr/bin/thin:19
+
+ActionView::TemplateError (compile error
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:42: syntax error, unexpected '>'
+/Users/dru/git/gmv/app/views/layouts/events.html.erb:43: syntax error, unexpected '=', expecting kEND
+			<% res = MultiGeocoder.geocode('100 Spear st, San Francisco, CA') ; @output_buffer.concat "\n"
+			        ^) on line #42 of app/views/layouts/events.html.erb:
+39: 	function setupMarkers(map)
+40: 	{
+41: 		<% res = nil %>
+42: 		<% @events.each do |event|>
+43: 			<% res = MultiGeocoder.geocode('100 Spear st, San Francisco, CA') %>
+44: 			
+45: 			createMarker(new GLatLng(<%= res.lat %>, <%= res.lng %>) , <%= render :partial=> "popup" %>)
+
+    app/views/layouts/events.html.erb:66:in `compile!'
+    app/controllers/events_controller.rb:10:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (44.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 10.0.2.5 at 2009-04-12 21:09:25) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.lat) on line #47 of app/views/layouts/events.html.erb:
+44: 			
+45: 			createMarker(new GLatLng(<%= res.lat %>, <%= res.lng %>) , <%= render :partial=> "popup" %>)
+46: 		<% end %>
+47: 		map.setCenter((new GLatLng(<%= res.lat %>, <%= res.lng %>), 13;
+48: 		
+49: 	}
+50: 
+
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:10:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (46.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20090412171646)
+Migrating to AddLocationToEvent (20090412181037)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+
+
+Processing EventsController#index (for 10.0.2.5 at 2009-04-12 21:14:19) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://10.0.2.1/]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20090412171646)
+Migrating to AddLocationToEvent (20090412181037)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20090412171646)
+Migrating to AddLocationToEvent (20090412181037)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "events" ADD "location" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "events" ADD "lat" double[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "events" ADD "lon" double[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090412181037')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("events")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mEvent Create (0.8ms)[0m   [0;1mINSERT INTO "events" ("lon", "updated_at", "title", "event_at", "description", "user_id", "published_at", "lat", "created_at", "location") VALUES(NULL, '2009-04-12 18:17:01', 'Leprodance', NULL, NULL, NULL, NULL, NULL, '2009-04-12 18:17:01', '100 Spear st, San Francisco, CA')[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:20:32) [GET]
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" [0m
+Google geocoding. Address: 100 Spear st, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Spear st, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Spear St, San Francisco, CA 94105, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Spear St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94105</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7952976" south="37.7890024" east="-122.3908524" west="-122.3971476" />
+    </ExtendedData>
+    <Point><coordinates>-122.3940000,37.7921500,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mEvent Update (1.0ms)[0m   [0;1mUPDATE "events" SET "lon" = -122.394, "lat" = 37.79215, "updated_at" = '2009-04-12 18:20:33' WHERE "id" = 1[0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (uninitialized constant Event::User) on line #9 of app/views/events/index.html.erb:
+6: 
+7: <% @events.each do |event| %>
+8:   <tr>
+9:     <td><%=h event.user %></td>
+10:     <td><%=h event.title %></td>
+11:     <td><%=h event.description %></td>
+12:     <td><%=h event.published_at %></td>
+
+    app/views/events/index.html.erb:9
+    app/views/events/index.html.erb:7:in `each'
+    app/views/events/index.html.erb:7
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (58.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:21:01) [GET]
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.4ms)
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:21:49) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.1ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:22:16) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.1ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:22:32) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.1ms)
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:23:39) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.1ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:24:29) [GET]
+  [4;36;1mEvent Load (1.2ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.1ms)
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:26:58) [GET]
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.9ms)
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:27:09) [GET]
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_popup (0.1ms)
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:28:32) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (118.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:28:47) [GET]
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (50.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:28:48) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (49.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:29:00) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (49.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:29:01) [GET]
+  [4;35;1mEvent Load (2.2ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (58.2ms)
+Rendered rescues/_request_and_response (3.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:29:01) [GET]
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (123.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:29:02) [GET]
+  [4;35;1mEvent Load (2.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (172.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:29:02) [GET]
+  [4;36;1mEvent Load (0.8ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (68.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:29:02) [GET]
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (Missing template events/_popup.erb in view path app/views) on line #48 of app/views/layouts/events.html.erb:
+45: 	function setupMarkers(map)
+46: 	{
+47: 		<% @events.each do |event| %>		
+48: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>) , "<%= render :partial=> "popup" %>")
+49: 			
+50: 			map.addOverlay(m);
+51:           
+
+    app/views/layouts/events.html.erb:48
+    app/views/layouts/events.html.erb:47:in `each'
+    app/views/layouts/events.html.erb:47
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (59.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:38:30) [GET]
+  [4;36;1mEvent Load (0.8ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (No expansion found for :default) on line #9 of app/views/layouts/events.html.erb:
+6:   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+7:   <title>Events: <%= controller.action_name %></title>
+8:   <%= stylesheet_link_tag 'scaffold' %>
+9:   <%= javascript_include_tag :default %>	
+10:   <%= javascript_include_tag "swfobject" %>	
+11: 	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA"
+12: 	        type="text/javascript"></script>
+
+    app/views/layouts/events.html.erb:9
+    app/controllers/events_controller.rb:18:in `index'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (47.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:38:48) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:38:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #58 of app/views/layouts/events.html.erb:
+55: 	
+56: 	function setupMarkers(map)
+57: 	{
+58: 		<% @events.each do |event| %>		
+59: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>), "")
+60: 			m.rails_id = <%= event.id %>
+61: 			map.addOverlay(m);
+
+    app/views/layouts/events.html.erb:58
+    app/controllers/events_controller.rb:29:in `show'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (45.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:39:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #58 of app/views/layouts/events.html.erb:
+55: 	
+56: 	function setupMarkers(map)
+57: 	{
+58: 		<% @events.each do |event| %>		
+59: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>), "")
+60: 			m.rails_id = <%= event.id %>
+61: 			map.addOverlay(m);
+
+    app/views/layouts/events.html.erb:58
+    app/controllers/events_controller.rb:29:in `show'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (48.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:40:29) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:40:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering events/show
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:42:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering events/show
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:42:42) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:42:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.8ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering events/show
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 21:42:57) [GET]
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #58 of app/views/layouts/events.html.erb:
+55: 	
+56: 	function setupMarkers(map)
+57: 	{
+58: 		<% @events.each do |event| %>		
+59: 			m = createMarker(new GLatLng(<%= event.lat %>, <%= event.lon %>), "Loading...")
+60: 			m.rails_id = <%= event.id %>
+61: 			map.addOverlay(m);
+
+    app/views/layouts/events.html.erb:58
+    app/controllers/events_controller.rb:41:in `new'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (45.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 21:45:09) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 92ms (View: 84, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:45:13) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:47:11) [GET]
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 21:47:16) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 21:47:50) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 26ms (View: 16, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 21:47:58) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 91ms (View: 84, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:48:03) [GET]
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 21:48:06) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2009-04-12 21:48:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"C/6r02Z580flsOv2LJC8Bn6J+3XZmo4W4K1fdvxLPE4=", "event"=>{"user"=>"", "event_at(1i)"=>"2009", "event_at(2i)"=>"4", "title"=>"Лепроденс", "event_at(3i)"=>"12", "published_at(1i)"=>"2009", "description"=>"", "published_at(2i)"=>"4", "published_at(3i)"=>"12", "location"=>"Москва Шаболовка 37"}}
+
+NameError (uninitialized constant Event::User):
+  app/controllers/events_controller.rb:55:in `new'
+  app/controllers/events_controller.rb:55:in `create'
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#create (for 127.0.0.1 at 2009-04-12 21:48:38) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"C/6r02Z580flsOv2LJC8Bn6J+3XZmo4W4K1fdvxLPE4=", "event"=>{"user"=>"", "event_at(1i)"=>"2009", "event_at(2i)"=>"4", "title"=>"Лепроденс", "event_at(3i)"=>"12", "published_at(1i)"=>"2009", "description"=>"", "published_at(2i)"=>"4", "published_at(3i)"=>"12", "location"=>"Москва Шаболовка 37"}}
+
+NameError (uninitialized constant Event::User):
+  app/controllers/events_controller.rb:55:in `new'
+  app/controllers/events_controller.rb:55:in `create'
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (48.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2009-04-12 21:48:44) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 30ms (View: 17, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2009-04-12 21:48:56) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"C/6r02Z580flsOv2LJC8Bn6J+3XZmo4W4K1fdvxLPE4=", "event"=>{"event_at(1i)"=>"2009", "event_at(2i)"=>"4", "title"=>"Хмм", "event_at(3i)"=>"12", "published_at(1i)"=>"2009", "description"=>"", "published_at(2i)"=>"4", "published_at(3i)"=>"12", "location"=>"Москва Шаболовка 37"}}
+  [4;36;1mEvent Create (0.7ms)[0m   [0;1mINSERT INTO "events" ("lon", "updated_at", "title", "event_at", "description", "user_id", "published_at", "lat", "created_at", "location") VALUES(NULL, '2009-04-12 18:48:56', 'Хмм', '2009-04-12', '', NULL, '2009-04-12', NULL, '2009-04-12 18:48:56', 'Москва Шаболовка 37')[0m
+Redirected to http://localhost:3000/events/2
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:48:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:49:01) [GET]
+  [4;36;1mEvent Load (0.8ms)[0m   [0;1mSELECT * FROM "events" [0m
+Google geocoding. Address: Москва Шаболовка 37. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>Москва Шаболовка 37</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Russian Federation, 115162, Moscow, ул. Шаболовка, 37</address>
+    <AddressDetails Accuracy="6" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>RU</CountryNameCode><CountryName>Russian Federation</CountryName><AdministrativeArea><AdministrativeAreaName>Moscow</AdministrativeAreaName><Locality><LocalityName>Moscow</LocalityName><Thoroughfare><ThoroughfareName>ул. Шаболовка</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>115162</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="55.7213607" south="55.7150655" east="37.6132495" west="37.6069543" />
+    </ExtendedData>
+    <Point><coordinates>37.6101019,55.7182131,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mEvent Update (0.6ms)[0m   [0mUPDATE "events" SET "lon" = 37.6101019, "lat" = 55.7182131, "updated_at" = '2009-04-12 18:49:01' WHERE "id" = 2[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 277ms (View: 9, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:49:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering events/show
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2009-04-12 21:49:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 131ms (View: 3, DB: 0) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2009-04-12 21:49:32) [GET]
+  [4;36;1mEvent Load (1.3ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 22ms (View: 5, DB: 1) | 200 OK [http://localhost/events]
