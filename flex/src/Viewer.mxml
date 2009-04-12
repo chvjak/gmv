@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"  layout="vertical" applicationComplete="init();">
+	
+	<mx:HTTPService id="videos" />
+
+	<mx:Script>
+		<![CDATA[					
+			private function init():void
+			{
+				var eventId:String = mx.core.Application.application.parameters.eventId;
+				videos.url= "/events/" + eventId + ".xml";
+				videos.send();
+			}
+		]]>
+	</mx:Script>
+
+
+	<mx:TileList width="100%" height="100%" id="picsList" 
+		dataProvider="{videos.lastResult.events.event}" itemRenderer="Thumbnail" />
+
+</mx:Application>
