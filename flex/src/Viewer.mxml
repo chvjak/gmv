@@ -16,6 +16,6 @@
 
 
 	<mx:TileList width="100%" height="100%" id="picsList" 
-		dataProvider="{videos.lastResult.events.event}" itemRenderer="Thumbnail" />
+		dataProvider="{videos.lastResult.event.videos.video}" itemRenderer="Thumbnail" />
 
 </mx:Application>

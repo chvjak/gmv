@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090412192203) do
+ActiveRecord::Schema.define(:version => 20090420195047) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(:version => 20090412192203) do
     t.float    "lat"
     t.float    "lon"
     t.string   "thumbnail"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.integer "event_id"
+    t.string  "title"
+    t.string  "filename"
   end
 
 end

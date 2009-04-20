@@ -24,11 +24,11 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id], :include => :videos)
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => [@event,@event,@event] }
+      format.xml  { render :xml => @event.to_xml(:include=>[:videos]) }
       format.js { render :layout => false }
     end
   end
